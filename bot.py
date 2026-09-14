@@ -68,7 +68,12 @@ async def start(msg: types.Message):
     )
 
     try:
-        photo = FSInputFile("photo.jpg.jpg.jpg")
+      
+current_dir = os.path.dirname(os.path.abspath(__file__))
+photo_path = os.path.join(current_dir, "photo.jpg.jpg.jpg")
+
+photo = FSInputFile(photo_path)
+
 
         await msg.answer_photo(
             photo=photo,
